@@ -1,0 +1,5 @@
+dronekit_env/
+__pycache__/
+*.pyc
+*.tlog
+mav.tlog
