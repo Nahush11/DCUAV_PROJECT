@@ -1,81 +1,126 @@
-<img width="900" height="1600" alt="WhatsApp Image 2026-08-14 at 1 57 37 PM" src="https://github.com/user-attachments/assets/efc36fa6-e1c3-4b9d-995e-66b131f06baa" />
 # DCUAV — Autonomous Indoor Drone Flight with Vicon
 
 Autonomous indoor quadcopter flight using a Vicon motion-capture system for
-positioning — no GPS, no satellites, fully indoors. Built for the "Design and
-Control of UAVs" university project.
+positioning — no GPS, no satellites, fully indoors. Built for the **Design and
+Control of UAVs** university project.
 
-<!-- DRAG YOUR BEST VIDEO HERE (hover or spiral). Just drop the file into
-     this line while editing the README on GitHub and it embeds automatically. -->
+## Project Overview
+
+<!-- Add a short project showcase video here -->
+<!-- Drag & drop your overview video below this line -->
 
 ---
 
 ## What it does
 
 - **Stable autonomous hover** — takes off and holds position within ±5 cm
-- **Upward spiral trajectory** — 1 m radius, climbing 0.5 m → 1.5 m over
+- **Upward spiral trajectory** — 1 m radius, climbing from 0.5 m to 1.5 m over
   3 windings, flown autonomously
-- All positioning comes from a **Vicon motion-capture system**, injected into
-  the flight controller as if it were GPS — so the drone knows exactly where
-  it is indoors.
+- Uses a **Vicon motion-capture system** for precise indoor positioning.
 
-## Hardware
+---
 
-- Raspberry Pi 5 (companion computer)
-- Pixhawk 6C flight controller running ArduPilot
-- QAV250 quadcopter frame
-- RadioMaster XR1 (ExpressLRS) receiver
-- Vicon motion-capture system
+# Hardware
 
-## Software stack
+## Drone Photos
 
-- **DroneKit** + **pymavlink** — talking to the flight controller
-- **pyvicon-datastream** — reading live position from Vicon
-- **pyproj** — converting lab coordinates to the GPS frame ArduPilot expects
-- Python 3, running in a virtual environment on the Pi
+| Front View | Side View |
+|------------|-----------|
+| ![Drone ](<img width="900" height="1600" alt="WhatsApp Image 2026-08-14 at 1 57 37 PM" src="https://github.com/user-attachments/assets/aef2f64f-c319-425d-b153-3a1bea401133" />
+) | ![Drone](<img width="1200" height="1600" alt="IMG-20260814-WA0011" src="https://github.com/user-attachments/assets/d8438e4e-56fd-444d-9b04-c66b0b0319de" />
+) |
 
-## How it works
+**
 
-```
+### Components
+
+- Raspberry Pi 5 (Companion Computer)
+- Pixhawk 6C Flight Controller (ArduPilot)
+- QAV250 Quadcopter Frame
+- RadioMaster XR1 (ExpressLRS) Receiver
+- Vicon Motion-Capture System
+
+---
+
+# Software Stack
+
+- **DroneKit** + **pymavlink** — Communication with Pixhawk
+- **pyvicon-datastream** — Live Vicon position streaming
+- **pyproj** — Coordinate conversion for GPS injection
+- Python 3 running in a virtual environment on Raspberry Pi
+
+---
+
+# System Architecture
+
+```text
 Vicon camera system
       │  (live x, y, z + orientation)
       ▼
-Raspberry Pi 5  ──►  converts position into a MAVLink GPS_INPUT message
+Raspberry Pi 5 ──► Converts position into MAVLink GPS_INPUT
       │
-      ▼  (USB)
+      ▼ (USB)
 Pixhawk 6C (ArduPilot)
-      │  EKF fuses the injected position (GPS_TYPE = MAV)
+      │ EKF fuses injected GPS data
       ▼
-GUIDED mode  ──►  autonomous hover / spiral
+GUIDED Mode ──► Autonomous Hover / Spiral
 ```
 
-The key idea: ArduPilot's EKF is told to treat the Vicon feed as its GPS
-source (`GPS_TYPE = 14`), so all the normal autonomous-flight machinery works
-indoors with centimetre-accurate motion-capture data instead of satellites.
+The key idea is that ArduPilot's EKF treats the Vicon position as its GPS source
+(`GPS_TYPE = 14`), enabling fully autonomous indoor flight with centimetre-level accuracy.
 
-## The scripts
+---
 
-| File | What it does |
-|------|--------------|
-| `hover1.py` | Arms, takes off to 1 m, holds a stable hover, lands |
-| `spiral1.py` | Flies the full upward spiral trajectory |
+# Flight Demonstrations
 
-## Running it
+## Autonomous Hover
+
+**Video**
+
+<!-- Drag & drop your hover video here -->
+
+---
+
+## Autonomous Spiral Flight
+
+**Video**
+
+<!-- Drag & drop your spiral flight video here -->
+
+---
+
+# Project Scripts
+
+| File | Description |
+|------|-------------|
+| `hover1.py` | Arms the drone, takes off to 1 m, hovers, then lands |
+| `spiral1.py` | Executes the complete autonomous upward spiral trajectory |
+
+---
+
+# Running the Project
 
 ```bash
 cd ~/uav_project
 source dronekit_env/bin/activate
-python hover1.py     # or spiral1.py
+
+python hover1.py      # Hover mission
+python spiral1.py     # Spiral mission
 ```
 
-The Pixhawk connects over USB (`/dev/ttyACM0`); the Vicon feed streams over
-the lab network.
-
-## More footage
-
-<!-- Drop additional clips here — build photos, the spiral from another angle,
-     bench testing, etc. Each dragged-in video/image embeds inline. -->
+The Pixhawk communicates over USB (`/dev/ttyACM0`), while the Vicon system streams pose data over the lab network.
 
 ---
 
-*Design and Control of UAVs — university project.*
+## Project Gallery
+
+You can add additional images or videos here, such as:
+
+- Bench testing
+- Vicon lab setup
+- Flight controller wiring
+- Raspberry Pi integration
+
+---
+
+*Design and Control of UAVs — University Project*
