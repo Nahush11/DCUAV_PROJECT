@@ -84,7 +84,10 @@ The key idea is that ArduPilot's EKF treats the Vicon position as its GPS source
 
 **Video**
 
-<!-- Drag & drop your hover video here -->
+
+
+https://github.com/user-attachments/assets/21dcf66f-5470-45fd-a3b5-d1d8ddff13ef
+
 
 ---
 
@@ -92,7 +95,16 @@ The key idea is that ArduPilot's EKF treats the Vicon position as its GPS source
 
 **Video**
 
-<!-- Drag & drop your spiral flight video here -->
+<
+
+
+>
+
+
+
+
+
+
 
 ---
 
