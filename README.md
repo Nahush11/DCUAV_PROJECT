@@ -24,11 +24,20 @@ Control of UAVs** university project.
 
 ## Drone Photos
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/aef2f64f-c319-425d-b153-3a1bea401133" width="400" alt="Drone Photo 1"/>
-  <img src="https://github.com/user-attachments/assets/d8438e4e-56fd-444d-9b04-c66b0b0319de" width="400" alt="Drone Photo 2"/>
-</p>
-**
+## Drone Photos
+
+<table align="center">
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/aef2f64f-c319-425d-b153-3a1bea401133"
+           width="350" height="350" alt="Drone Photo 1">
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/d8438e4e-56fd-444d-9b04-c66b0b0319de"
+           width="350" height="350" alt="Drone Photo 2">
+    </td>
+  </tr>
+</table>
 
 ### Components
 
