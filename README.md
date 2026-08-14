@@ -1,3 +1,4 @@
+<img width="900" height="1600" alt="WhatsApp Image 2026-08-14 at 1 57 37 PM" src="https://github.com/user-attachments/assets/efc36fa6-e1c3-4b9d-995e-66b131f06baa" />
 # DCUAV — Autonomous Indoor Drone Flight with Vicon
 
 Autonomous indoor quadcopter flight using a Vicon motion-capture system for
