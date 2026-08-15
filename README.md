@@ -30,11 +30,11 @@ Control of UAVs** university project.
   <tr>
     <td>
       <img src="https://github.com/user-attachments/assets/aef2f64f-c319-425d-b153-3a1bea401133"
-           width="350" height="350" alt="Drone Photo 1">
+           width="350" height="400" alt="Drone Photo 1">
     </td>
     <td>
       <img src="https://github.com/user-attachments/assets/d8438e4e-56fd-444d-9b04-c66b0b0319de"
-           width="350" height="350" alt="Drone Photo 2">
+           width="350" height="400" alt="Drone Photo 2">
     </td>
   </tr>
 </table>
